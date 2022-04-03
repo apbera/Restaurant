@@ -1,0 +1,40 @@
+<div id="filter-container">
+    <div class="filter">
+        <p>Wybierz rodzaj kuchni</p>    
+            <li *ngFor="let c of cuisines" [value]="c">{{c}}
+                <input type="checkbox" [name]="c" (change)="cuisineFilter($event)">
+            </li>
+    </div>
+
+    <div class="filter">
+        <p>Wybierz kategorie dania</p>    
+            <li *ngFor="let cat of categories" [value]="cat">{{cat}}
+                <input type="checkbox" [name]="cat" (change)="categoryFilter($event)">
+            </li>
+    </div>
+    
+    <div class="filter">
+        <p>Wybierz minimalną cene dania</p>
+            {{minPrice}}<input type="range" min="{{minPrice}}" max="{{filteredMaxPrice}}" value="{{minPrice}}" (input)="changeMinPrice($event)">{{filteredMaxPrice}}
+      <br><div id="r"> {{filteredMinPrice}}</div> 
+    </div>
+
+    <div class="filter">
+        <p>Wybierz maksymalną cene dania</p>
+
+        {{filteredMinPrice}}<input type="range" min="{{filteredMinPrice}}" max="{{maxPrice}}" value="{{maxPrice}}" (input)="changeMaxPrice($event)">{{maxPrice}}
+      <br><div id="r"> {{filteredMaxPrice}}</div> 
+    </div>
+
+
+    <div class="filter"id="rate">
+        <p>Wybierz ocene dania</p>
+        <li> <div class="stars"></div> <input type="checkbox" [disabled]="!ratings.includes(1)" (change)="selectRating($event, 1)"></li>
+        <li> <div class="stars"></div><div class="stars"></div> <input type="checkbox" [disabled]="!ratings.includes(2)"(change)="selectRating($event, 2)"></li>
+        <li> <div class="stars"></div><div class="stars"></div><div class="stars"></div><input type="checkbox" [disabled]="!ratings.includes(3)"(change)="selectRating($event, 3)"></li>
+        <li><div class="stars"></div><div class="stars"></div><div class="stars"></div><div class="stars"></div> <input type="checkbox"[disabled]="!ratings.includes(4)" (change)="selectRating($event, 4)"></li>
+        <li><div class="stars"></div><div class="stars"></div><div class="stars"></div><div class="stars"></div><div class="stars"></div><input type="checkbox" [disabled]="!ratings.includes(5)"(change)="selectRating($event, 5)"> </li>
+    </div>
+
+</div>
+<br>

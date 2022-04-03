@@ -1,0 +1,13 @@
+.bask {
+    margin: 0;
+    padding: 10px 30px;
+    background-color: #47eb31;
+    font-size: 20px;
+}
+
+li {
+    background-color: rgb(36, 165, 11);
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+}

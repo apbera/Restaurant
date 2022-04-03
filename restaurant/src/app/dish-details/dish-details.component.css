@@ -1,0 +1,93 @@
+#content {
+    background-color: #afaaaa;
+    width: 100%;
+}
+
+.content1 {
+    border: solid 4px green;
+}
+.content2 {
+    border: solid 4px red;
+}
+.content3 {
+    border: solid 4px rgb(187, 186, 186);
+}
+
+#top {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#top > p{
+    margin-left: 30px;
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+#bot > p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#dishes-count > p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#mid {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#mid > img{
+    border-radius: 25%;
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+}
+
+#bot {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e9c1c1;
+}
+
+#buttons > button{
+    margin: 10px;
+    height: 30px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+#btnMenu {
+    width: 100px;
+    border: none;
+    background-color: #c52e2e;
+}
+#btnAdd {
+    width: 40px;
+    border: none;
+    background-color: #169120;
+}
+#btnSub {
+    width: 40px;
+    border: none;
+    background-color: #249dbb;
+}
+
+#lastDishes {
+    margin: 10px 30px 10px 30px ;
+    padding: 10px;
+    background-color: #426bb6;
+    border-radius: 5%;
+    color: white;
+}
+
+#noDishes {
+    margin: 10px 30px 10px 30px ;
+    padding: 10px;
+    background-color: #d14e5f;
+    border-radius: 5%;
+    color: black;
+}

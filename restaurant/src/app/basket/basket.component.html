@@ -1,0 +1,6 @@
+<div class="bask">Basket {{basketPriceSum() | currency}}</div>
+
+<ul>
+    <li *ngFor="let e of basket" > <div>{{e.name}}</div> <div>{{e.elements}}</div></li>
+</ul>
+

@@ -1,0 +1,34 @@
+<div id="content" [ngClass]="{
+    'content1':dishData.id == maxPriceId,
+    'content2':dishData.id == minPriceId,
+    'content3':dishData.id != maxPriceId && dishData.id != minPriceId}">
+    <div id="top"> 
+        <p>Nazwa: {{dishData.name | uppercase}}</p>
+    </div>
+    <div id="mid">
+        <img src="{{dishData.image}}" alt="photo" (click)="showDetails()">
+        <div id="info">
+            <p>Typ: {{dishData.type}}</p>
+            <p>Kategoria: {{dishData.category}}</p>
+        </div>
+    </div> 
+    <div id="dishes-count">
+        <p>Dishes: {{dishesOrdered}}/{{dishData.maxDishes}}</p>
+        <div *ngIf="(dishData.maxDishes - dishesOrdered < 3) && (dishData.maxDishes - dishesOrdered > 0)" id="lastDishes">
+            Mała liczba zamówień dostępna dla tego dania
+        </div>
+        <div *ngIf="dishData.maxDishes - dishesOrdered == 0" id="noDishes">
+            Danie niedostępne
+        </div>
+    </div>
+    <div id="bot">
+        <p>Price: {{dishData.price | currency}}</p>
+        <div id=buttons>
+            <button id="btnDel" (click)="deleteDish(dishData.id)">Del</button>
+            <button id="btnAdd"(click)="incrementDishes()" [style.visibility]="plusButtonDisplay ? 'visible' : 'hidden'">+</button>
+            <button id="btnSub" (click)="decrementDishes()" [style.visibility]="minusButtonDisplay ? 'visible' : 'hidden'">-</button>
+        </div>
+    </div>  
+</div>    
+    
+    

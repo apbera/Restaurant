@@ -1,0 +1,43 @@
+label {
+    padding: 10px;;
+    font-size: 14px;
+}
+input, textarea {
+    width: 500px;
+    margin: 10px 0;
+    padding: 10px 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 2px solid rgb(50, 212, 29);
+    border-radius: 4px;
+  }
+  input:focus,
+  textarea:focus {
+    outline: none !important;
+    border: 3px solid rgb(14, 155, 26);
+  }
+
+.alert {
+  padding: 8px;;
+  color: rgb(248, 2, 2);
+}
+
+button {
+    width: 100px;;
+    background-color: #2ceb45;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:disabled,
+  button[disabled]{
+  background-color: #9fd89d;
+}
+  
+button:hover:enabled {
+    background-color: #044212;
+  }

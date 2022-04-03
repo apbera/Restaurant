@@ -1,0 +1,75 @@
+<form novalidate [formGroup]="addingDishForm" (submit)="onSubmit()">
+    <div>
+        <label>Nazwa dania:</label><br>
+        <input class="center-input" id="name" name="name" formControlName="name">
+        <div *ngIf="name.invalid &&  name.touched"class="alert"> 
+            Wprowadź nazwe dania
+        </div>
+    </div>
+    
+    <div>
+        <label>Kuchnia:</label><br>
+        <input class="center-input" name="cuisine" formControlName="cuisine">
+        <div *ngIf="cuisine.invalid &&  cuisine.touched"class="alert alert-danger"> 
+            Wprowadź rodzaj kuchni
+        </div>
+    </div>
+    
+    <div>
+        <label>Typ:</label><br>
+        <input name="type" formControlName="type">
+        <div *ngIf="type.invalid &&  type.touched" class="alert alert-danger"> 
+            Wprowadź typ dania
+        </div>
+    </div>
+     
+    <div>
+        <label>Kategoria:</label><br>
+        <input name="category"formControlName="category">
+        <div *ngIf="category.invalid &&  category.touched" class="alert alert-danger"> 
+            Wprowadź kategorie dania
+        </div>
+    </div>
+    
+    <div>
+        <label>Składniki:</label><br>
+        <input name="ingridients" formControlName="ingridients">
+        <div *ngIf="ingridients.invalid &&  ingridients.touched" class="alert alert-danger"> 
+            Wprowadź składniki dania
+        </div>
+    </div>
+
+    <div>
+        <label>Ilość dań:</label><br>
+        <input type="number" name="maxDishes" formControlName="maxDishes">
+        <div *ngIf="maxDishes.invalid && maxDishes.touched" class="alert alert-danger">
+            <div *ngIf="maxDishes.errors?.required"> Wymagane jest podanie ilości dań </div>
+            <div *ngIf="maxDishes.errors?.min"> Ilość dań musi być dodatnia</div>
+        </div>
+    </div>
+    
+    <div>
+        <label>Cena:</label><br>
+        <input  type="number" name="price" formControlName="price">
+        <div *ngIf="price.invalid && price.touched" class="alert alert-danger">
+            <div *ngIf="price.errors?.required"> Wprowadź cenę dania </div>
+            <div *ngIf="price.errors?.min"> Cena dania musi byćdodatnia</div>
+        </div>
+    </div>
+       
+    <div>
+        <label>Opis:</label><br>
+        <textarea name="description" cols="20" rows="10" formControlName="description"></textarea>
+        <div *ngIf="description.invalid &&  description.touched" class="alert alert-danger"> 
+            Wprowadź opis
+        </div>
+    </div>
+    
+    <div>
+        <label>Zdjęcie:</label><br>
+        <input name="image" formControlName="image">
+    </div>
+    
+ 
+    <button class="btn1" type="submit" [disabled]="!addingDishForm.valid" >Submit</button>
+</form>

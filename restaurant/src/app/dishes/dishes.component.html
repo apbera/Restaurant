@@ -1,0 +1,24 @@
+<!--<app-basket [basket]="basket" [basketSum]="basketSum"></app-basket>-->
+<app-reserved-dishes [reservedDishes]="getReservedDishes()"></app-reserved-dishes>
+
+<app-filter [dishes]="dishesData"
+      (setMinMaxFilter)="setMinMaxFilter($event)"
+></app-filter>
+
+<div id="dishes">
+    <ng-container *ngFor="let d of dishesData | paginate: { itemsPerPage: pageSize, currentPage: p }" >
+    <app-dish *ngIf="d.display"
+    [dishData]="d"
+    [maxPriceId]="maxPriceId"
+    [minPriceId]="minPriceId"
+    (addDishBasket)="addToBasket($event)"
+    (removeDishBasket)="removeFromBasket($event)"
+    (delDish)="deleteDish()"
+    ></app-dish>
+    </ng-container>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<p>Ilość dań wywietlanych na stronie</p>
+<input type="number" name="paginationSize" [(ngModel)]="pageSize">
+
+<!--<app-adding-dish (addDish)="addDish($event)"></app-adding-dish>-->

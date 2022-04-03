@@ -1,0 +1,37 @@
+<div id="content">
+    <div id="top"> 
+        <app-rating (setRate)="setRate($event)" [rateVal]="dishData.rate"></app-rating>
+        <p>Nazwa: {{dishData.name | uppercase}}</p>
+    </div>
+    <div id="mid">
+        <img src="{{dishData.image}}" alt="photo">
+        <div id="info">
+            <p>Kuchnia: {{dishData.cuisine | uppercase}}</p>
+            <p>Typ: {{dishData.type}}</p>
+            <p>Kategoria: {{dishData.category}}</p>
+            <p>Składniki: {{dishData.ingridients}}</p>
+            <p>Opis:</p>
+            <p>{{dishData.description}}</p>
+        </div>
+    </div> 
+    <div id="dishes-count">
+        <p>Dishes: {{dishesOrdered}}/{{dishData.maxDishes}}</p>
+        <div *ngIf="(dishData.maxDishes - dishesOrdered < 3) && (dishData.maxDishes - dishesOrdered > 0)" id="lastDishes">
+            Mała liczba zamówień dostępna dla tego dania
+        </div>
+        <div *ngIf="dishData.maxDishes - dishesOrdered == 0" id="noDishes">
+            Danie niedostępne
+        </div>
+    </div>
+    <div id="bot">
+        <p>Price: {{dishData.price | currency}}</p>
+        <div id=buttons>
+            <button id="btnAdd"(click)="incrementDishes()" [style.visibility]="plusButtonDisplay ? 'visible' : 'hidden'">+</button>
+            <button id="btnSub" (click)="decrementDishes()" [style.visibility]="minusButtonDisplay ? 'visible' : 'hidden'">-</button>
+            <button id="btnMenu" (click)="returnToMenu()">Return to Menu</button>
+        </div>
+    </div>  
+</div> 
+   
+    
+    
